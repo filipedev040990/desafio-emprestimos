@@ -1,7 +1,7 @@
 {
-  "name": "projeto_base",
+  "name": "desafio-emprestimos",
   "version": "1.0.0",
-  "description": "Base para projetos node + typescript",
+  "description": "Desafio backend",
   "main": "index.js",
   "scripts": {
     "start": "node dist/infra/http/main.js",
@@ -38,7 +38,6 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "husky": "^8.0.3",
     "jest": "27.1.1",
     "jest-mock-extended": "^2.0.1",
     "lint-staged": "^11.1.2",
