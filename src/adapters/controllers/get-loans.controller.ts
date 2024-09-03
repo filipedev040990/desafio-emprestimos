@@ -3,7 +3,7 @@ import { GetLoansUseCaseInterface } from '@/domain/usecases/get-loans-usecase.in
 import { handleError } from '@/shared/helpers/error.helper'
 import { success } from '@/shared/helpers/http.helper'
 
-export class GetLoansController {
+export class GetLoansController implements ControllerInterface {
   constructor(private readonly usecase: GetLoansUseCaseInterface) {}
   execute(input: HttpRequest): HttpResponse {
     try {

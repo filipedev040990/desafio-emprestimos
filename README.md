@@ -41,7 +41,7 @@ HTTP/1.1 200 Ok
 
 ```json
 {
-  "customer": "Vuxaywua Zukiagou",
+  "customer": "Joãozinho da Silva",
   "loans": [
     {
       "type": "PERSONAL",

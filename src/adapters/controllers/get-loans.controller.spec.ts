@@ -11,7 +11,7 @@ const usecase = mock<GetLoansUseCaseInterface>()
 describe('GetLoansController', () => {
   let sut: GetLoansController
   let input: HttpRequest
-  let fakeLoans: LoanTypeData[]
+  let fakeLoans: LoanTypeData
 
   beforeEach(() => {
     sut = new GetLoansController(usecase)
@@ -24,10 +24,13 @@ describe('GetLoansController', () => {
         location: 'MG'
       }
     }
-    fakeLoans = [
-      { loanType: 'PERSONAL', interestRate: 1000 },
-      { loanType: 'GUARANTEED', interestRate: 2000 }
-    ]
+    fakeLoans = {
+      customer: 'Joãozinho da Silva',
+      loans: [
+        { loanType: 'PERSONAL', interestRate: 1000 },
+        { loanType: 'GUARANTEED', interestRate: 2000 }
+      ]
+    }
     usecase.execute.mockReturnValue(fakeLoans)
   })
 

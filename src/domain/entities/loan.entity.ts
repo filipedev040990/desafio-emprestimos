@@ -47,13 +47,19 @@ export class LoanEntity {
     if (!isValidLocation(location)) throw new InvalidParamError('location')
   }
 
-  public defineLoans(input: LoanTypeCalculate): LoanTypeData[] {
-    const { age, income, location } = input
+  public defineLoans(input: LoanTypeCalculate): LoanTypeData {
+    const { name, age, income, location } = input
 
     if (income <= 3000 || (income <= 5000 && age < 30 && location === 'SP')) {
-      return LOAN_TYPES.filter(loan => loan.loanType === 'PERSONAL' || loan.loanType === 'GUARANTEED')
+      return {
+        customer: name,
+        loans: LOAN_TYPES.filter(loan => loan.loanType === 'PERSONAL' || loan.loanType === 'GUARANTEED')
+      }
     }
 
-    return LOAN_TYPES.filter(loan => loan.loanType === 'CONSIGNMENT')
+    return {
+      customer: name,
+      loans: LOAN_TYPES.filter(loan => loan.loanType === 'CONSIGNMENT')
+    }
   }
 }

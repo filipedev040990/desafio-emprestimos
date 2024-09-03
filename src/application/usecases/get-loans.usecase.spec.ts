@@ -33,6 +33,7 @@ describe('GetLoansUseCase', () => {
     sut.execute(input)
     expect(spy).toHaveBeenCalledTimes(1)
     expect(spy).toHaveBeenCalledWith({
+      name: input.name,
       age: input.age,
       income: input.income,
       location: input.location
@@ -41,10 +42,13 @@ describe('GetLoansUseCase', () => {
   })
 
   test('should return a correct output', () => {
-    const mockLoanData: LoanTypeData[] = [
-      { loanType: 'PERSONAL', interestRate: 1000 },
-      { loanType: 'GUARANTEED', interestRate: 2000 }
-    ]
+    const mockLoanData: LoanTypeData = {
+      customer: 'Zé das Couves',
+      loans: [
+        { loanType: 'PERSONAL', interestRate: 1000 },
+        { loanType: 'GUARANTEED', interestRate: 2000 }
+      ]
+    }
     jest.spyOn(LoanEntity.prototype, 'defineLoans').mockReturnValueOnce(mockLoanData)
 
     const output = sut.execute(input)

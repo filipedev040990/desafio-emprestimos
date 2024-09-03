@@ -10,5 +10,5 @@ export type HttpResponse = {
 }
 
 export interface ControllerInterface {
-  execute: (input: HttpRequest) => Promise<HttpResponse>
+  execute: (input: HttpRequest) => HttpResponse
 }

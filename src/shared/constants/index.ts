@@ -1,6 +1,6 @@
-import { LoanTypeData } from '@/domain/entities/loan.types'
+import { LoanTypesAndRate } from '@/domain/entities/loan.types'
 
-export const LOAN_TYPES: LoanTypeData[] = [
+export const LOAN_TYPES: LoanTypesAndRate[] = [
   {
     loanType: 'PERSONAL',
     interestRate: 4

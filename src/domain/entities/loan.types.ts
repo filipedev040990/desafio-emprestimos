@@ -7,12 +7,18 @@ export type LoanData = {
 }
 
 export type LoanTypeCalculate = {
+  name: string
   age: number
   income: number
   location: string
 }
 
 export type LoanTypeData = {
+  customer: string
+  loans: LoanTypesAndRate[]
+}
+
+export type LoanTypesAndRate = {
   loanType: string
   interestRate: number
 }

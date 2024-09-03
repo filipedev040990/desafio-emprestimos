@@ -197,18 +197,21 @@ describe('LoanEntity', () => {
       location: 'MG'
     })
 
-    let loans = loan.defineLoans({ age: loan.age, income: loan.income, location: loan.location })
+    let loans = loan.defineLoans({ name: loan.name, age: loan.age, income: loan.income, location: loan.location })
 
-    expect(loans).toEqual([
-      {
-        loanType: 'PERSONAL',
-        interestRate: 4
-      },
-      {
-        loanType: 'GUARANTEED',
-        interestRate: 3
-      }
-    ])
+    expect(loans).toEqual({
+      customer: 'João da Silva',
+      loans: [
+        {
+          loanType: 'PERSONAL',
+          interestRate: 4
+        },
+        {
+          loanType: 'GUARANTEED',
+          interestRate: 3
+        }
+      ]
+    })
   })
 
   test('should return PERSONAL AND GUARANTEED loan types', () => {
@@ -220,18 +223,21 @@ describe('LoanEntity', () => {
       location: 'SP'
     })
 
-    let loans = loan.defineLoans({ age: loan.age, income: loan.income, location: loan.location })
+    let loans = loan.defineLoans({ name: loan.name, age: loan.age, income: loan.income, location: loan.location })
 
-    expect(loans).toEqual([
-      {
-        loanType: 'PERSONAL',
-        interestRate: 4
-      },
-      {
-        loanType: 'GUARANTEED',
-        interestRate: 3
-      }
-    ])
+    expect(loans).toEqual({
+      customer: 'João da Silva',
+      loans: [
+        {
+          loanType: 'PERSONAL',
+          interestRate: 4
+        },
+        {
+          loanType: 'GUARANTEED',
+          interestRate: 3
+        }
+      ]
+    })
   })
 
   test('should return CONSIGNMENT loan type', () => {
@@ -243,13 +249,16 @@ describe('LoanEntity', () => {
       location: 'MG'
     })
 
-    let loans = loan.defineLoans({ age: loan.age, income: loan.income, location: loan.location })
+    let loans = loan.defineLoans({ name: loan.name, age: loan.age, income: loan.income, location: loan.location })
 
-    expect(loans).toEqual([
-      {
-        loanType: 'CONSIGNMENT',
-        interestRate: 2
-      }
-    ])
+    expect(loans).toEqual({
+      customer: 'João da Silva',
+      loans: [
+        {
+          loanType: 'CONSIGNMENT',
+          interestRate: 2
+        }
+      ]
+    })
   })
 })
