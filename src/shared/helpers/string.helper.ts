@@ -24,7 +24,7 @@ export const isValidString = (value: string): boolean => {
 }
 
 export const isValidCpf = (cpf: string): boolean => {
-  const regex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+  const regex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$/
   return regex.test(cpf)
 }
 

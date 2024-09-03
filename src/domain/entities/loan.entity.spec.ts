@@ -197,7 +197,7 @@ describe('LoanEntity', () => {
       location: 'MG'
     })
 
-    let loans = loan.defineLoan({ age: loan.age, income: loan.income, location: loan.location })
+    let loans = loan.defineLoans({ age: loan.age, income: loan.income, location: loan.location })
 
     expect(loans).toEqual([
       {
@@ -220,7 +220,7 @@ describe('LoanEntity', () => {
       location: 'SP'
     })
 
-    let loans = loan.defineLoan({ age: loan.age, income: loan.income, location: loan.location })
+    let loans = loan.defineLoans({ age: loan.age, income: loan.income, location: loan.location })
 
     expect(loans).toEqual([
       {
@@ -243,7 +243,7 @@ describe('LoanEntity', () => {
       location: 'MG'
     })
 
-    let loans = loan.defineLoan({ age: loan.age, income: loan.income, location: loan.location })
+    let loans = loan.defineLoans({ age: loan.age, income: loan.income, location: loan.location })
 
     expect(loans).toEqual([
       {
