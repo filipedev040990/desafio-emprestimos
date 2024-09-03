@@ -50,16 +50,15 @@ export class LoanEntity {
   public defineLoans(input: LoanTypeCalculate): LoanTypeData {
     const { name, age, income, location } = input
 
-    if (income <= 3000 || (income <= 5000 && age < 30 && location === 'SP')) {
-      return {
-        customer: name,
-        loans: LOAN_TYPES.filter(loan => loan.loanType === 'PERSONAL' || loan.loanType === 'GUARANTEED')
-      }
-    }
+    const isEligibleForPersonalOrGuaranteed = income <= 3000 || (income <= 5000 && age < 30 && location === 'SP')
+
+    const loans = isEligibleForPersonalOrGuaranteed
+      ? LOAN_TYPES.filter(loan => loan.loanType === 'PERSONAL' || loan.loanType === 'GUARANTEED')
+      : LOAN_TYPES.filter(loan => loan.loanType === 'CONSIGNMENT')
 
     return {
       customer: name,
-      loans: LOAN_TYPES.filter(loan => loan.loanType === 'CONSIGNMENT')
+      loans
     }
   }
 }

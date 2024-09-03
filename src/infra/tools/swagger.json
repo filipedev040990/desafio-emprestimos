@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/route/test": {
+        "/customer-loans": {
             "post": {
                 "tags": [
                     "Loans"
